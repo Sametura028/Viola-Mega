@@ -57,6 +57,10 @@ nav {
     overflow: hidden;
 }
 
+.imgcol img {
+    width: 100%;
+}
+
 .imgcol:hover .triangle {
     right: 0;
 }
@@ -72,6 +76,7 @@ nav {
     font-size: 2rem;
     display: flex;
     align-items: end;
+    /* max-width: 705px; */
     padding-left: 1rem;
 }
 
@@ -317,15 +322,12 @@ nav {
 }
 
 .fotocontain .row .imgcol:first-child {
-    padding: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .fotocontain .row .imgcol:last-child {
     padding-right: 0 !important;
-}
-
-.fotocontain .row .imgcol img {
-    width: 100%;
 }
 
 .contimg {
@@ -340,11 +342,13 @@ nav {
 .greenbg {
     overflow: hidden;
     background: #60D877;
+    position: relative;
 }
 
 .hr {
     border: 1px solid white;
     width: 645px;
+    position: relative;
 }
 
 .rotate1 {
@@ -364,9 +368,11 @@ nav {
     width: 100%;
     flex-direction: column;
     display: flex;
-    margin: 3rem 0;
+    margin: 4rem auto;
     align-items: center;
-
+    max-width: 400px;
+    position: relative;
+    bottom: 3rem;
 }
 
 .ftlogo {
@@ -427,7 +433,40 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 1460px) {
+
+    .pinkimage {
+        padding: 0 !important;
+    }
+
+    .pinkarea {
+        margin: 0 !important;
+    }
+
+    .pinkimage img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1435px) {
+    .fotocontain .row .imgcol:first-child {
+        padding-left: 15px !important;
+        padding-right: 0 !important;
+    }
+
+}
+
 @media only screen and (max-width: 1400px) {
+
+
+    .pinkarea {
+        margin: 0 !important;
+    }
+
+    .pinkimage {
+        padding: 0 !important;
+    }
+
     .galleryflex {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr);
@@ -436,10 +475,6 @@ a:hover {
         width: 100%;
     }
 
-    .pinkimage img {
-        margin-left: 2rem;
-        width: 100%;
-    }
 
     .foryou {
         margin: 0 auto;
@@ -460,6 +495,11 @@ a:hover {
     .gallery .hoverimages:hover img,
     .gallery .filter {
         width: 400px;
+
+    }
+
+    .imgcol img {
+        width: 100%;
 
     }
 
@@ -525,7 +565,16 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 1044px) {
 
+    .fotocontain .row .imgcol img {
+        width: 100%;
+    }
+
+    .fotocontain .row .imgcol:first-child {
+        padding-right: 0px !important;
+    }
+}
 
 
 @media only screen and (max-width: 992px) {
@@ -568,21 +617,24 @@ a:hover {
         margin: 1rem 0;
     }
 
-    .fotocontain .row .imgcol:first-child {
-        padding: 0 15px !important;
-    }
 
-    .fotocontain .row .imgcol:last-child {
-        padding-right: 15px !important;
-    }
 
-    .fotocontain .row .imgcol img {
-        width: auto;
-    }
 
     .contfilter .detail {
         font-size: 1rem;
         padding: .5rem;
+    }
+    .hr {
+        width: 335px;
+    }
+
+    .rotate1 {
+
+        margin: 4rem -2rem 0 0;
+    }
+
+    .rotate2 {
+        margin: 4rem 0 0 -2rem;
     }
 }
 
@@ -609,19 +661,11 @@ a:hover {
     .bigfilter {
         max-width: 545px;
     }
-
     .hr {
-        width: 335px;
+        width: 297px;
     }
 
-    .rotate1 {
 
-        margin: 4rem -2rem 0 0;
-    }
-
-    .rotate2 {
-        margin: 4rem 0 0 -2rem;
-    }
 
     .katohead h1 {
         font-size: 1.75rem;
@@ -638,9 +682,11 @@ a:hover {
     footer {
         text-align: center;
     }
+
     footer .ftlist div {
         margin-top: 1rem !important;
     }
+
     .icons {
         margin: 0 auto;
     }
@@ -700,4 +746,18 @@ a:hover {
         line-height: .25rem;
         font-size: .75rem;
     }
+    .hr {
+        width: 250px;
+    }
+    .rotate2 {
+        margin: 2rem 0 0 -2rem;
+    }
+    .rotate1 {
+        margin: 2rem -2rem 0 0;
+    }
+    .head h1 {
+        font-size: 1rem;
+    }
+    .contfilter {
+        line-height: .15rem;}
 }
