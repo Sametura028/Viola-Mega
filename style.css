@@ -37,6 +37,7 @@ nav {
 
 .gallerycontain {
     margin: 5rem 0;
+    padding: 0 !important;
 }
 
 .triangle {
@@ -59,8 +60,12 @@ nav {
 
 .imgcol img {
     width: 100%;
+    object-fit: cover;
+    transition: all .5s ease-in-out;
 }
-
+.imgcol:hover img{
+    transform: scale(1.1);
+}
 .imgcol:hover .triangle {
     right: 0;
 }
@@ -155,6 +160,7 @@ nav {
 }
 
 .navrow {
+    padding: 1rem 0;
     width: 100%;
     justify-content: space-between;
 }
@@ -263,8 +269,8 @@ nav {
 }
 
 .gallery img {
-    width: 230px;
-    height: 377px;
+    width: 100%;
+    max-width: 180px;    height: 377px;
     position: relative;
     object-fit: fill;
 
@@ -303,11 +309,16 @@ nav {
 }
 
 .gallery .hoverimages:hover img {
-    width: 350px;
+    width: 155px;
     height: 377px;
     z-index: 2;
 }
 
+/* Hover durumunda küçülen diğer img elemanları */
+.gallery .hoverimages:hover img:not(:hover) {
+    width: 100%;
+    max-width: 350px;
+}
 .gallery .hoverimages:hover .filter {
 
     z-index: 3;
@@ -321,15 +332,18 @@ nav {
     width: 100%;
 }
 
-.fotocontain .row .imgcol:first-child {
+.fotocontain .row .imgcol {
     padding-left: 0 !important;
+    max-width: 705px;
+    object-fit: cover   ;
     padding-right: 0 !important;
 }
 
-.fotocontain .row .imgcol:last-child {
+
+.firtrow,.secondrow,.thirdrow{
+    justify-content: space-between;
     padding-right: 0 !important;
 }
-
 .contimg {
     padding: 0 !important;
 }
@@ -343,6 +357,10 @@ nav {
     overflow: hidden;
     background: #60D877;
     position: relative;
+    
+}
+.greenbtn:hover {
+    color: #60d877 !important;
 }
 
 .hr {
@@ -434,11 +452,18 @@ a:hover {
 }
 
 @media only screen and (max-width: 1460px) {
-
+    .contactus{
+        margin: 0 !important;
+    }
+    .firtrow, .secondrow, .thirdrow  {
+        margin: 0 !important;
+    }
     .pinkimage {
         padding: 0 !important;
     }
-
+    .fotocontain .row .imgcol{
+        max-width: 680px;
+            }
     .pinkarea {
         margin: 0 !important;
     }
@@ -448,13 +473,6 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 1435px) {
-    .fotocontain .row .imgcol:first-child {
-        padding-left: 15px !important;
-        padding-right: 0 !important;
-    }
-
-}
 
 @media only screen and (max-width: 1400px) {
 
@@ -494,19 +512,19 @@ a:hover {
     .gallery img,
     .gallery .hoverimages:hover img,
     .gallery .filter {
-        width: 400px;
+        max-width: 400px;
 
     }
 
-    .imgcol img {
-        width: 100%;
-
-    }
+ 
 
     .hoverimages {
         display: flex;
         justify-content: center;
     }
+    .fotocontain .row .imgcol{
+        max-width: 600px;
+            }
 }
 
 @media only screen and (max-width: 1320px) {
@@ -533,6 +551,9 @@ a:hover {
         width: 350px;
 
     }
+    .fotocontain .row .imgcol{
+        max-width: 580px;
+            }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -551,7 +572,9 @@ a:hover {
         object-fit: fill;
 
     }
-
+    .fotocontain .row .imgcol{
+        max-width: 450px;
+            }
     .header.col-lg-9 h1 {
         font-size: 3.5rem;
     }
@@ -566,10 +589,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 1044px) {
-
-    .fotocontain .row .imgcol img {
-        width: 100%;
-    }
 
     .fotocontain .row .imgcol:first-child {
         padding-right: 0px !important;
@@ -599,15 +618,28 @@ a:hover {
 
     .triangle {
         border-width: 0 0 250.5px 210.5px;
-    }
+    }    .fotocontain .row .imgcol{
+        max-width: 325px;
+            }
 }
 
 @media only screen and (max-width: 768px) {
+    .fotocontain .row .imgcol {
+        max-width: 550px;
+    }
     .menu__box {
+        
+        right: -300%;}
+  .menu__box {
         right: -200%;
         width: 280px;
+    }.firtrow, .secondrow, .thirdrow{
+        justify-content: center;
     }
-
+    .clear {
+       
+        height: 0;
+    }
     .spotdiv {
         text-align: center;
         padding: 13% 0;
@@ -648,10 +680,6 @@ a:hover {
         margin: 2rem 0;
     }
 
-    .imgcol img {
-        width: 100%;
-
-    }
 
     .fotocontain .row {
         margin: 0 auto;
@@ -671,10 +699,7 @@ a:hover {
         font-size: 1.75rem;
     }
 
-    .greenbtn:hover {
-        color: #60d877 !important;
-    }
-
+   
     .greenbtn {
         font-size: 1rem;
     }
